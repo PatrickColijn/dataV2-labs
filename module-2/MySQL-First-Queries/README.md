@@ -126,6 +126,7 @@ Angry Birds	0
 **9. Now compare the data from questions 5 and 6. What do you see?**
 
 The top 10 of the most rated apps are not in the list of best rated apps (vice-versa)
+Except the bible app.
 
 **10. How could you take the top 3 regarding both user ratings and number of votes?**
 
@@ -137,7 +138,7 @@ LIMIT 3;
 
 **11. Do people care about the price of an app?** Do some queries, comment why are you doing them and the results you retrieve. What is your conclusion?
 
-Based on the top 10 best rated apps and top 10 most rated apps, which accumulates to around 20.000.000 of the total of 92.790.253, we find that 95% is free and assume there is a correlation between price and number of downloads
+Based on the top 10 best rated apps and top 10 most rated apps, which accumulates to around 20.000.000 of the total of 92.790.253, we find that around 95% is free and assume there is a correlation between price and number of downloads
 
 SELECT SUM(rating_count_tot)
 FROM app
