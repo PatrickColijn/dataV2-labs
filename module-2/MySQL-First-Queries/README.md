@@ -120,8 +120,10 @@ Angry Birds	0
 
 
 **7. Take a look at the data you retrieved in question 5. Give some insights.**
+Facebook is the most rated app and probably therefor the most downloaded applications from the app store
 
 **8. Take a look at the data you retrieved in question 6. Give some insights.**
+The bible is the highest rated app based on it's rating and number of times rated 
 
 **9. Now compare the data from questions 5 and 6. What do you see?**
 
@@ -144,6 +146,83 @@ SELECT SUM(rating_count_tot)
 FROM app
 
 Total number of downloads = 92.790.253
+CREATE TABLE Cars (
+	ID int,
+    VIN varchar(255),
+    Manufacturer varchar(255),
+    Model varchar(255),
+    Year YEAR,
+    Color varchar(255),
+    PRIMARY KEY (ID, VIN)
+);
+
+CREATE TABLE Customers (
+	ID int,
+    Customer_ID int(10),
+    Customer_name varchar(255),
+    Phone_number varchar(10),
+    Email varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    State_Province varchar(255),
+    Country varchar(255),
+    Zip_code varchar(8), 
+    PRIMARY KEY (ID, Customer_ID)
+);
+
+CREATE TABLE Sales_Person (
+	ID int,
+    STAFF_ID INT(6),
+    Staff_name varchar(255),
+    Store varchar(10),
+    PRIMARY KEY (ID, STAFF_ID)
+);
+
+CREATE TABLE Invoices (
+	ID INT,
+    Invoice_number int (32),
+    DATE DATE,
+    carsVIN varchar(255),
+    Customer_ID INT,
+    STAFF_ID INT,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (carsVIN) REFERENCES Cars(VIN),
+    FOREIGN KEY (Customer_ID) REFERENCES Customers(Customer_ID),
+    FOREIGN KEY (STAFF_ID) REFERENCES Sales_Person(STAFF_ID)
+);
+
+INSERT INTO cars.Cars
+VALUES 	(0, '3K096I98581DHSNUP', 'Volkswagen', 	'Tiguan',				2019, 	'Blue'),
+		(1,	'ZM8G7BEUQZ97IH46V', 'Peugeot',		'Rifter', 				2019, 	'Red'),
+		(2,	'RKXVNNIHLVVZOUB4M', 'Ford',		'Fusion'				2018,	'White'),
+		(3,	'HKNDGS7CU31E9Z7JW', 'Toyota',		'RAV4'					2018,	'Silver'),
+		(4,	'DAM41UDN3CHU2WVF6', 'Volvo',		'V60',					2019,	'Gray'),
+		(5,	'DAM41UDN3CHU2WVF6', 'Volvo',		'V60 Cross Country',	2019,	'Gray');
+		
+INSERT INTO cars.Customers
+VALUES (
+
+(0,	10001,	'Pablo Picasso',		'+34 636 17 63 82',		'-',	'Paseo de la Chopera, 14',	'Madrid',	'Madrid',		'Spain',			28045),
+(1,	20001,	'Abraham Lincoln',		'+1 305 907 7086',		'-',	'120 SW 8th St',			'Miami',	'Florida',		'United States',	33130),
+(2,	30001,	'Napoléon Bonaparte',	'+33 1 79 75 40 00',	'-',	'40 Rue du Colisée',		'Paris',	'Île-de-France', 			,			);
+
+
+INSERT INTO cars.Sales_Person
+VALUES (
+(0,	00001,	'Pete, Cruiser',	'Madrid'),
+(1,	00002,	'Anna Sthesia',		'Barcelona'),
+(2,	00003,	'Paul Molive',		'Berlin'),
+(3,	00004,	'Gail Forcewind',	'Paris'),
+(4,	00005,	'Paige Turner',		'Mimia'),
+(5,	00006,	'Bob Frapples',		'Mexico City'),
+(6,	00007,	'Walter Melon',		'Amsterdam'),
+(7,	00008,	'Shonda Leer',		'São Paulo');
+
+INSERT INTO cars.Invoices
+VALUES (
+(0,	852399038,	22-08-2018,	0,	1,	3),
+(1,	731166526,	31-12-2018,	3,	0,	5),
+(2,	271135104,	22-01-2019,	2,	2,	7);
 
 SELECT track_name, user_rating_ver, rating_count_tot, price
 FROM app

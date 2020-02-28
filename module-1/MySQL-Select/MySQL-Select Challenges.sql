@@ -37,7 +37,7 @@ GROUP BY a.au_id, a.au_lname, a.au_fname, pub_name;
 '''
 Challenge 3
 Who are the top 3 authors who have sold the highest number of titles? Write a query to find out.
-'''
+''';
 
 SELECT a.au_id AS AUTHOR_ID, a.au_lname AS LASTNAME, a.au_fname AS FIRSTNAME, SUM(s.qty) AS TOTAL
 FROM authors as a
@@ -52,8 +52,9 @@ LIMIT 3;
 '''
 Challenge 4
 Modify your solution in Challenge 3 so that the output will display all 23 authors instead of the top 3.
-'''
-SELECT a.au_id AS AUTHOR_ID, a.au_lname AS LASTNAME, a.au_fname AS FIRSTNAME, SUM(s.qty) AS TOTAL
+''';
+
+SELECT a.au_id AS AUTHOR_ID, a.au_lname AS LASTNAME, a.au_fname AS FIRSTNAME, IFNULL(SUM(s.qty),0) AS TOTAL
 FROM authors as a
 LEFT JOIN titleauthor as ta
 ON a.au_id = ta.au_id
