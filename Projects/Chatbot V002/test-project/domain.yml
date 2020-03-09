@@ -1,12 +1,66 @@
+session_config:
+  session_expiration_time: 60.0
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- bot_faq
+- functions
+- question_neightbourhood
+- capita_per_container
+- question_explain
+- planned_containers
+- question_taxes
+- question_neighbourhood
+responses:
+  utter_greet:
+  - text: Hey there! My name is Damsco, your waste retrieval intelligence bot! What
+      can I do for you?
+    image: http://www.qru.amsterdam/wp-content/uploads/2018/09/logo-gemeente-amsterdam.png
+  utter_bot_faq:
+  - text: I was created as an Ironhack student project with the main purpose to help
+      the people of Amsterdam with their questions related to waste retrieval.
+  utter_response_functions:
+  - text: 'I am currently in béta so my options are limited. However, I can help you
+      with the following: Show the containers per neighbourhood, per capita or show
+      you the planned containers per district. Furthermore, I can inform you about
+      the taxes for waste retrieval!'
+  utter_show_container_per_neighbourhood:
+  - text: 'Here is a map that shows the numbers of containers per neighbourhood:'
+    image: https://raw.githubusercontent.com/pmoreira1/amsterdam-project/master/images/Containers%20per%20Neighbourhood.jpg
+  utter_show_capita_per_container:
+  - text: 'Here is a map that shows the distribution of containers per capita per
+      sub-area in Amsterdam:'
+    image: https://raw.githubusercontent.com/pmoreira1/amsterdam-project/master/images/Capita%20per%20Container.jpg
+  utter_table_explanation_capita:
+  - text: The map shows the number of containers per neightbourhood which is calculated
+      by the population data divided by the number of containers in the neightboorhood.
+      Data was provided by the city of Amsterdam based on multiple datasets.
+  utter_show_planned_containers:
+  - text: 'In this map you see the distribution of planned containers per neighbourhood
+      in Amsterdam:'
+    image: https://raw.githubusercontent.com/pmoreira1/amsterdam-project/master/images/Capita%20per%20Container%20-%20Planned.jpg
+  utter_taxes:
+  - text: Every household pays waste tax to the municipality. With this income, the
+      municipality can collect and process household waste. This means a single-person
+      household will pay €276 and a multi-person household €368.
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://raw.githubusercontent.com/pmoreira1/amsterdam-project/master/images/container_per_neighbourhood.png
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye and see you soon!
+  - text: Thank you and remember, don't be a stranger...
+  utter_iamabot:
+  - text: I am a bot, build by Pedro, René and Patrick, powered by Rasa.
 actions:
 - utter_greet
 - utter_cheer_up
@@ -14,27 +68,11 @@ actions:
 - utter_happy
 - utter_goodbye
 - utter_iamabot
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+- utter_bot_faq
+- utter_show_container_per_neighbourhood
+- utter_taxes
+- utter_show_capita_per_container
+- utter_table_explanation_capita
+- utter_show_planned_containers
+- utter_response_functions
+- utter_table_explanation

@@ -13,8 +13,16 @@ The goal of this lab is to define good practices that you and your team will fol
 * Follow your agreements during the project!
 
 ## Topics
-* Variable naming.
-* Function naming.
-* Libraries.
-* Community conventions.
-* Other (git, ...)
+
+### Naming conventions:
+* Constants -> All uppercase letters
+* Variables -> lower case letters
+* class names -> CapWords convention
+* fucntion names -> lower case with underscores to improve readability
+* libraries -> use a line for each library 
+
+### Data Preparation (Tidy Data):
+- Make use of the tidy data principles by Hadley Wickham (2014)
+* Each variable forms a column
+* Each observation forms a row
+* each tye of observational unit forms a table
