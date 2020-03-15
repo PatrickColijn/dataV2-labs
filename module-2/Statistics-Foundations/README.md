@@ -13,29 +13,47 @@ You need to submit a markdown file with the solution to the following challenges
 ### Challenge 1
 One player rolls two dices. Describe the measurable space and the random variable for:
 * A. The values that the player obtains.
+Ω1 = {1, 2, 3, 4, 5, 6}.
+Ω2 = {1, 2, 3, 4, 5, 6}.
 * B. The sum of the values obtained.
+Ωsum = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}.
 * C. The maximum value obtained after rolling both dices.
+12
 
 Describe the following events:
 * Case A: Both values are greater than 5.
+2 / 6 * 2 / 6 = 4 / 36 = 2 / 18
 * Case B: The sum of values is even.
+3 / 6 * 3 / 6 = 9 / 36 = 3 / 12 = 1 / 4
 * Case C: The maximum is the value of both rolls.
+1 / 36
 
 ### Challenge 2
 One player picks two cards from a poker deck. Describe the measurable space and the random variable for:
 * A. The number of figures he picks.
+        - 52 cards excluding jokers
+        - 1 ace, 3 pictures, 9 numbers = 13 figures 
+        - 4 patterns
+        - 2 colours
 * B. The sum of card values. Consider that the value of figures is 10 and the value of aces is 15.
+        - 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 15 = 105 * 4 = 420
 * C. The number of hearts or spades he picks.
+          - 13 hearts, 13 spades
 
 Describe the following events:
 * Case A: The number of figures in the cards the player picked is two.
+        -
 * Case B: The sum of card values is 17.
+        -
 * Case C: The value of both cards is less than 8.
+        -
 
 ### Challenge 3
 Two players roll a dice. Describe the measurable space and the random variable for:
 * A. The score of player A.
+        - ΩA = {1, 2, 3, 4, 5, 6}.
 * B. The greatest score.
+        - 1 or 6 - depends on you definition of success
 * C. The earnings of player A if the game rules state that:  
 "The player with the greatest score gets a coin from the other player.".
 * D. The earnings of player A if the game rules state that:  
